@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SREC — Kết nối thông minh</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Loading overlay -->
+  <div id="app-loader">
+    <div class="loader-logo">S</div>
+    <p>Đang tải SREC...</p>
+  </div>
+
+  <!-- ========== LANDING PAGE ========== -->
+  <div id="landing-page" style="display:none;">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <div class="logo-icon">S</div>
+          <span class="logo-text">SREC</span>
+        </div>
+        <div class="nav-links">
+          <a href="#why-srec">Tại sao chọn SREC</a>
+          <a href="#features">Tính năng</a>
+          <a href="#terms">Điều khoản</a>
+        </div>
+        <div class="nav-actions">
+          <button class="btn-ghost" id="btn-login-nav">Đăng nhập</button>
+          <button class="btn-primary" id="btn-register-nav">Đăng ký</button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-sparkles"></i><span>Nền tảng mạng xã hội thế hệ mới</span></div>
+        <h1 class="hero-title">Kết nối. Chia sẻ.<br /><span class="gradient-text">Trải nghiệm SREC</span></h1>
+        <p class="hero-desc">Nơi mọi khoảnh khắc được lưu giữ, mọi cuộc trò chuyện trở nên ý nghĩa. Tham gia cộng đồng SREC ngay hôm nay.</p>
+        <div class="hero-actions">
+          <button class="btn-primary btn-lg" id="btn-start">Bắt đầu miễn phí <i class="fas fa-arrow-right"></i></button>
+          <button class="btn-outline btn-lg" id="btn-learn">Tìm hiểu thêm</button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="phone-mockup">
+          <div class="phone-header">
+            <div class="phone-notch"></div>
+            <div class="chat-header">
+              <div class="chat-avatar">A</div>
+              <div class="chat-info">
+                <span class="chat-name">An Nguyễn</span>
+                <span class="chat-status">Đang hoạt động</span>
+              </div>
+            </div>
+          </div>
+          <div class="chat-body" id="chat-demo">
+            <div class="msg msg-left"><div class="msg-bubble">Chào bạn! Bạn đã thử SREC chưa? 😊</div><span class="msg-time">10:24</span></div>
+            <div class="msg msg-right"><div class="msg-bubble">Mới vào nè! Giao diện đẹp quá 🔥</div><span class="msg-time">10:25</span></div>
+            <div class="msg msg-left"><div class="msg-bubble">Đúng không? Nhắn tin mượt, đăng bài cũng nhanh lắm</div><span class="msg-time">10:26</span></div>
+            <div class="msg msg-right"><div class="msg-bubble">Like bài viết của mình đi nào ❤️</div><span class="msg-time">10:27</span></div>
+            <div class="msg msg-left"><div class="msg-bubble like-msg"><i class="fas fa-heart"></i> Đã thích bài viết của bạn</div><span class="msg-time">10:28</span></div>
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="Nhắn tin..." disabled />
+            <button><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-srec" id="why-srec">
+      <div class="section-header">
+        <h2>Tại sao nên chọn <span class="gradient-text">SREC</span>?</h2>
+        <p>6 lý do khiến hàng ngàn người đã tin tưởng và yêu thích</p>
+      </div>
+      <div class="reasons-grid">
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-bolt"></i></div><h3>Tốc độ siêu nhanh</h3><p>Tải trang và gửi tin nhắn gần như tức thì. Không còn chờ đợi mệt mỏi.</p></div>
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-shield-halved"></i></div><h3>Bảo mật tuyệt đối</h3><p>Dữ liệu được mã hóa đầu cuối. Thông tin cá nhân của bạn luôn được bảo vệ.</p></div>
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-palette"></i></div><h3>Giao diện sang trọng</h3><p>Thiết kế tối giản, hiện đại, dễ sử dụng trên mọi thiết bị.</p></div>
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-comments"></i></div><h3>Nhắn tin 2 chiều</h3><p>Trò chuyện realtime, gửi ảnh, thả cảm xúc ngay lập tức.</p></div>
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-user-pen"></i></div><h3>Tùy chỉnh tự do</h3><p>Đổi avatar, ảnh bìa, trạng thái cá nhân theo phong cách riêng.</p></div>
+        <div class="reason-card"><div class="reason-icon"><i class="fas fa-heart"></i></div><h3>Cộng đồng tích cực</h3><p>Môi trường lành mạnh, kết nối những người có cùng đam mê.</p></div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="section-header"><h2>Tính năng nổi bật</h2><p>Mọi thứ bạn cần từ một mạng xã hội hiện đại</p></div>
+      <div class="features-list">
+        <div class="feature-item"><i class="fas fa-newspaper"></i><div><h4>Bảng tin cá nhân</h4><p>Đăng bài, ảnh, story, thả like như Facebook</p></div></div>
+        <div class="feature-item"><i class="fas fa-message"></i><div><h4>Tin nhắn realtime</h4><p>Chat 2 chiều mượt mà trên mọi thiết bị</p></div></div>
+        <div class="feature-item"><i class="fas fa-image"></i><div><h4>Ảnh đại diện & Bìa</h4><p>Tùy chỉnh hồ sơ hoàn toàn theo ý bạn</p></div></div>
+        <div class="feature-item"><i class="fas fa-certificate"></i><div><h4>Tick xác minh</h4><p>Tick trắng, xanh, đen — uy tín được công nhận</p></div></div>
+      </div>
+    </section>
+
+    <section class="terms" id="terms">
+      <div class="section-header"><h2>Điều khoản sử dụng</h2><p>Vui lòng đọc kỹ trước khi sử dụng SREC</p></div>
+      <div class="terms-content">
+        <div class="term-block"><h4>1. Chấp nhận điều khoản</h4><p>Bằng việc đăng ký và sử dụng SREC, bạn đồng ý tuân thủ các điều khoản và chính sách của chúng tôi.</p></div>
+        <div class="term-block"><h4>2. Tài khoản người dùng</h4><p>Bạn chịu trách nhiệm bảo mật thông tin đăng nhập. Không chia sẻ tài khoản với người khác.</p></div>
+        <div class="term-block"><h4>3. Nội dung đăng tải</h4><p>Không đăng nội dung vi phạm pháp luật, thù địch, khiêu dâm hoặc xâm phạm quyền riêng tư người khác.</p></div>
+        <div class="term-block"><h4>4. Quyền riêng tư</h4><p>Chúng tôi cam kết bảo vệ dữ liệu cá nhân theo chính sách bảo mật. Không bán thông tin cho bên thứ ba.</p></div>
+        <div class="term-block"><h4>5. Hành vi bị cấm</h4><p>Spam, lừa đảo, quấy rối, hoặc sử dụng bot đều bị cấm và có thể dẫn đến khóa tài khoản vĩnh viễn.</p></div>
+        <div class="term-block"><h4>6. Thay đổi điều khoản</h4><p>SREC có quyền cập nhật điều khoản. Người dùng sẽ được thông báo khi có thay đổi quan trọng.</p></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo"><div class="logo-icon">S</div><span class="logo-text">SREC</span></div>
+          <p>Nền tảng kết nối thế hệ mới. Chia sẻ khoảnh khắc, xây dựng cộng đồng.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col"><h5>Sản phẩm</h5><a href="#">Tính năng</a><a href="#">Bảng giá</a><a href="#">Ứng dụng</a></div>
+          <div class="footer-col"><h5>Công ty</h5><a href="#">Về chúng tôi</a><a href="#">Tuyển dụng</a><a href="#">Blog</a></div>
+          <div class="footer-col"><h5>Hỗ trợ</h5><a href="#">Trung tâm trợ giúp</a><a href="#">Liên hệ</a><a href="#terms">Điều khoản</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 SREC. Tất cả quyền được bảo lưu.</p>
+        <div class="footer-bottom-links"><a href="#">Chính sách bảo mật</a><a href="#">Cookie</a></div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ========== AUTH OVERLAY ========== -->
+  <div class="auth-overlay" id="auth-overlay">
+    <div class="auth-container">
+      <button class="auth-close" id="auth-close"><i class="fas fa-times"></i></button>
+      <div class="auth-slider" id="auth-slider">
+        <div class="auth-panel login-panel">
+          <div class="auth-header">
+            <div class="logo"><div class="logo-icon">S</div><span class="logo-text">SREC</span></div>
+            <h2>Chào mừng trở lại</h2>
+            <p>Đăng nhập để tiếp tục trải nghiệm</p>
+          </div>
+          <form id="login-form">
+            <div class="form-group">
+              <label>Email / SĐT / Username</label>
+              <div class="input-wrap"><i class="fas fa-user"></i><input type="text" id="login-identifier" placeholder="email, sđt hoặc @username" required /></div>
+            </div>
+            <div class="form-group">
+              <label>Mật khẩu</label>
+              <div class="input-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="login-password" placeholder="••••••••" required />
+                <button type="button" class="toggle-pass" data-target="login-password"><i class="fas fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="form-options">
+              <label class="checkbox"><input type="checkbox" id="remember-me" checked /><span>Ghi nhớ đăng nhập</span></label>
+              <a href="#" id="forgot-password">Quên mật khẩu?</a>
+            </div>
+            <button type="submit" class="btn-primary btn-full">Đăng nhập</button>
+          </form>
+          <div class="auth-switch">Chưa có tài khoản? <a href="#" id="switch-to-register">Đăng ký ngay</a></div>
+        </div>
+
+        <div class="auth-panel register-panel">
+          <div class="auth-header">
+            <div class="logo"><div class="logo-icon">S</div><span class="logo-text">SREC</span></div>
+            <h2>Tạo tài khoản mới</h2>
+            <p>Tham gia cộng đồng SREC ngay hôm nay</p>
+          </div>
+          <form id="register-form">
+            <div class="form-group">
+              <label>Họ và tên</label>
+              <div class="input-wrap"><i class="fas fa-user"></i><input type="text" id="reg-name" placeholder="Nguyễn Văn A" required /></div>
+            </div>
+            <div class="form-group">
+              <label>Username <span style="color:var(--text-muted);font-weight:400">(để tìm kiếm)</span></label>
+              <div class="input-wrap"><i class="fas fa-at"></i><input type="text" id="reg-username" placeholder="nguyenvana" required pattern="[a-zA-Z0-9_]{3,20}" /></div>
+            </div>
+            <div class="form-group">
+              <label>Email hoặc Số điện thoại</label>
+              <div class="input-wrap"><i class="fas fa-envelope"></i><input type="text" id="reg-identifier" placeholder="email@example.com hoặc 09xx..." required /></div>
+            </div>
+            <div class="form-group">
+              <label>Mật khẩu</label>
+              <div class="input-wrap">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="reg-password" placeholder="Tối thiểu 6 ký tự" required minlength="6" />
+                <button type="button" class="toggle-pass" data-target="reg-password"><i class="fas fa-eye"></i></button>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Xác nhận mật khẩu</label>
+              <div class="input-wrap"><i class="fas fa-lock"></i><input type="password" id="reg-password2" placeholder="Nhập lại mật khẩu" required /></div>
+            </div>
+            <label class="checkbox terms-check"><input type="checkbox" id="agree-terms" required /><span>Tôi đồng ý với <a href="#terms">Điều khoản sử dụng</a></span></label>
+            <button type="submit" class="btn-primary btn-full">Đăng ký</button>
+          </form>
+          <div class="auth-switch">Đã có tài khoản? <a href="#" id="switch-to-login">Đăng nhập</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal-overlay" id="forgot-modal">
+    <div class="modal">
+      <button class="modal-close" id="forgot-close"><i class="fas fa-times"></i></button>
+      <h3>Quên mật khẩu</h3>
+      <p>Nhập email hoặc số điện thoại đã đăng ký. SREC sẽ tạo mật khẩu mới ngẫu nhiên cho bạn.</p>
+      <form id="forgot-form">
+        <div class="form-group"><div class="input-wrap"><i class="fas fa-envelope"></i><input type="text" id="forgot-identifier" placeholder="Email hoặc SĐT" required /></div></div>
+        <button type="submit" class="btn-primary btn-full">Lấy lại mật khẩu</button>
+      </form>
+      <div id="forgot-result" class="forgot-result" style="display:none;"></div>
+    </div>
+  </div>
+
+  <!-- ========== MAIN APP ========== -->
+  <div id="app" style="display:none;">
+    <header class="app-header">
+      <div class="app-header-inner">
+        <div class="logo" id="logo-home"><div class="logo-icon">S</div><span class="logo-text">SREC</span></div>
+        <div class="search-bar">
+          <i class="fas fa-search"></i>
+          <input type="text" id="search-users" placeholder="Tìm kiếm bạn bè, @username..." autocomplete="off" />
+          <div id="search-results" class="search-dropdown"></div>
+        </div>
+        <div class="header-actions">
+          <button class="icon-btn" id="btn-friend-req" title="Lời mời kết bạn">
+            <i class="fas fa-user-plus"></i>
+            <span class="badge" id="req-badge" style="display:none;">0</span>
+          </button>
+          <button class="icon-btn" id="btn-messages" title="Tin nhắn">
+            <i class="fas fa-comment-dots"></i>
+            <span class="badge" id="msg-badge" style="display:none;">0</span>
+          </button>
+          <button class="icon-btn" id="btn-notifications" title="Thông báo">
+            <i class="fas fa-bell"></i>
+            <span class="badge" id="notif-badge" style="display:none;">0</span>
+          </button>
+          <div class="user-menu">
+            <img id="header-avatar" src="" alt="Avatar" class="header-avatar" />
+            <span id="header-name">User</span>
+            <span id="header-badge"></span>
+            <i class="fas fa-chevron-down"></i>
+            <div class="dropdown" id="user-dropdown">
+              <a href="#" id="menu-profile"><i class="fas fa-user"></i> Trang cá nhân</a>
+              <a href="#" id="menu-settings"><i class="fas fa-cog"></i> Cài đặt</a>
+              <a href="#" id="menu-logout"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Friend Requests Dropdown -->
+    <div id="friend-req-panel" class="float-panel" style="display:none;">
+      <h4>Lời mời kết bạn</h4>
+      <div id="friend-req-list"></div>
+    </div>
+
+    <!-- Notifications Dropdown -->
+    <div id="notif-panel" class="float-panel" style="display:none;">
+      <h4>Thông báo</h4>
+      <div id="notif-list"></div>
+    </div>
+
+    <div class="app-body">
+      <aside class="sidebar left-sidebar">
+        <div class="sidebar-user" id="sidebar-profile">
+          <img id="sidebar-avatar" src="" alt="Avatar" />
+          <div>
+            <strong id="sidebar-name">User</strong>
+            <span id="sidebar-username">@username</span>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active" data-view="feed"><i class="fas fa-home"></i> Bảng tin</a>
+          <a href="#" class="nav-item" data-view="profile"><i class="fas fa-user"></i> Trang cá nhân</a>
+          <a href="#" class="nav-item" data-view="friends"><i class="fas fa-user-friends"></i> Bạn bè</a>
+          <a href="#" class="nav-item" data-view="messages"><i class="fas fa-comments"></i> Tin nhắn</a>
+          <a href="#" class="nav-item" data-view="settings"><i class="fas fa-cog"></i> Cài đặt</a>
+          <a href="admin.html" class="nav-item" id="nav-admin" style="display:none;" target="_blank"><i class="fas fa-shield-halved"></i> Quản trị</a>
+        </nav>
+      </aside>
+
+      <main class="main-content" id="main-content">
+        <!-- FEED -->
+        <div id="view-feed" class="view">
+          <!-- Stories bar -->
+          <div class="stories-bar card" id="stories-bar">
+            <div class="story-item add-story" id="btn-add-story">
+              <div class="story-ring add"><i class="fas fa-plus"></i></div>
+              <span>Tin của bạn</span>
+            </div>
+            <div id="stories-list"></div>
+          </div>
+
+          <!-- Create Post -->
+          <div class="create-post card">
+            <div class="create-post-top">
+              <img id="create-avatar" src="" alt="Avatar" class="post-avatar" />
+              <input type="text" id="post-input" placeholder="Bạn đang nghĩ gì?" readonly />
+            </div>
+            <div class="create-post-actions">
+              <button class="post-action" id="btn-add-photo"><i class="fas fa-image" style="color:#45bd62"></i> Ảnh</button>
+              <button class="post-action" id="btn-add-note"><i class="fas fa-sticky-note" style="color:#f7b928"></i> Ghi chú</button>
+              <button class="post-action" id="btn-create-post"><i class="fas fa-paper-plane" style="color:#1877f2"></i> Đăng</button>
+            </div>
+          </div>
+
+          <div id="posts-feed"></div>
+        </div>
+
+        <!-- PROFILE -->
+        <div id="view-profile" class="view" style="display:none;">
+          <div class="profile-cover-wrap">
+            <div class="profile-cover" id="profile-cover">
+              <button class="btn-change-cover" id="btn-change-cover"><i class="fas fa-camera"></i> Đổi ảnh bìa</button>
+            </div>
+            <div class="profile-info">
+              <div class="profile-avatar-wrap">
+                <img id="profile-avatar" src="" alt="Avatar" />
+                <button class="btn-change-avatar" id="btn-change-avatar"><i class="fas fa-camera"></i></button>
+              </div>
+              <div class="profile-details">
+                <h2 id="profile-name">User Name <span id="profile-badge"></span></h2>
+                <p class="profile-username" id="profile-username">@username</p>
+                <p id="profile-bio">Chưa có giới thiệu</p>
+                <div class="profile-meta-row" id="profile-meta-row">
+                  <span id="profile-location" style="display:none;"><i class="fas fa-map-marker-alt"></i> <span></span></span>
+                  <span id="profile-relation" style="display:none;"><i class="fas fa-heart"></i> <span></span></span>
+                </div>
+                <div class="profile-stats">
+                  <span><strong id="stat-posts">0</strong> bài viết</span>
+                  <span><strong id="stat-friends">0</strong> bạn bè</span>
+                </div>
+              </div>
+              <div class="profile-actions" id="profile-actions">
+                <button class="btn-primary" id="btn-edit-profile"><i class="fas fa-pen"></i> Chỉnh sửa</button>
+                <button class="btn-primary" id="btn-msg-profile" style="display:none;"><i class="fas fa-comment"></i> Nhắn tin</button>
+                <button class="btn-outline" id="btn-friend-profile" style="display:none;"><i class="fas fa-user-plus"></i> Kết bạn</button>
+                <button class="btn-outline" id="btn-unfriend-profile" style="display:none;"><i class="fas fa-user-minus"></i> Hủy kết bạn</button>
+                <button class="btn-outline" id="btn-block-profile" style="display:none;color:#f87171;"><i class="fas fa-ban"></i> Chặn</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-tabs">
+            <button class="ptab active" data-ptab="posts">Bài viết</button>
+            <button class="ptab" data-ptab="friends">Bạn bè</button>
+            <button class="ptab" data-ptab="about">Giới thiệu</button>
+          </div>
+          <div id="ptab-posts"><div id="profile-posts"></div></div>
+          <div id="ptab-friends" style="display:none;"><div id="profile-friends-grid" class="friends-grid"></div></div>
+          <div id="ptab-about" style="display:none;" class="card">
+            <h4>Giới thiệu</h4>
+            <p id="about-bio">—</p>
+            <p><strong>Username:</strong> <span id="about-username">—</span></p>
+            <p><strong>Nơi ở:</strong> <span id="about-location">—</span></p>
+            <p><strong>Tình trạng:</strong> <span id="about-relation">—</span></p>
+            <p><strong>Tham gia:</strong> <span id="about-joined">—</span></p>
+          </div>
+        </div>
+
+        <!-- FRIENDS -->
+        <div id="view-friends" class="view" style="display:none;">
+          <div class="card">
+            <h3>Bạn bè</h3>
+            <div id="my-friends-list" class="friends-grid"></div>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <h3>Gợi ý kết bạn</h3>
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:12px;">Những người bạn có thể quen</p>
+            <div id="friends-list" class="friends-grid"></div>
+          </div>
+        </div>
+
+        <!-- MESSAGES -->
+        <div id="view-messages" class="view" style="display:none;">
+          <div class="messages-layout">
+            <div class="conversations-list">
+              <h3>Tin nhắn</h3>
+              <div id="conversations"></div>
+            </div>
+            <div class="chat-panel">
+              <div class="chat-panel-header" id="chat-header">
+                <span>Chọn một cuộc trò chuyện</span>
+              </div>
+              <div class="chat-toolbar" id="chat-toolbar" style="display:none;">
+                <span class="streak-badge" id="chat-streak" title="Chuỗi nhắn tin"><i class="fas fa-fire"></i> <span>0</span></span>
+                <button class="icon-btn" id="btn-video-call" title="Video call"><i class="fas fa-video"></i></button>
+                <button class="icon-btn" id="btn-chat-bg" title="Đổi hình nền chat"><i class="fas fa-image"></i></button>
+              </div>
+              <div class="chat-messages" id="chat-messages"></div>
+              <div class="chat-compose" id="chat-compose" style="display:none;">
+                <input type="text" id="chat-input" placeholder="Nhập tin nhắn... dùng #hashtag" />
+                <button id="btn-send-msg"><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div id="view-settings" class="view" style="display:none;">
+          <div class="settings-layout">
+            <div class="settings-nav">
+              <button class="s-nav active" data-s="general"><i class="fas fa-user-cog"></i> Chung</button>
+              <button class="s-nav" data-s="privacy"><i class="fas fa-lock"></i> Quyền riêng tư</button>
+              <button class="s-nav" data-s="verify"><i class="fas fa-certificate"></i> Xác minh</button>
+              <button class="s-nav" data-s="page"><i class="fas fa-flag"></i> Trang / Page</button>
+              <button class="s-nav" data-s="language"><i class="fas fa-globe"></i> Ngôn ngữ</button>
+              <button class="s-nav" data-s="terms"><i class="fas fa-file-contract"></i> Điều khoản</button>
+            </div>
+            <div class="settings-content">
+              <!-- General -->
+              <div class="s-panel active" id="s-general">
+                <h3>Cài đặt chung</h3>
+                <div class="form-group">
+                  <label>Tên hiển thị</label>
+                  <input type="text" id="set-name" class="plain-input" />
+                </div>
+                <div class="form-group">
+                  <label>Username</label>
+                  <div class="input-wrap" style="position:relative;">
+                    <span style="position:absolute;left:14px;color:var(--text-muted);">@</span>
+                    <input type="text" id="set-username" class="plain-input" style="padding-left:32px;" pattern="[a-zA-Z0-9_]{3,20}" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Giới thiệu</label>
+                  <textarea id="set-bio" class="plain-input" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Ảnh đại diện</label>
+                  <div style="display:flex;align-items:center;gap:16px;">
+                    <img id="set-avatar-preview" src="" style="width:64px;height:64px;border-radius:50%;object-fit:cover;background:var(--gradient);" />
+                    <button class="btn-outline" id="set-change-avatar"><i class="fas fa-camera"></i> Đổi ảnh</button>
+                  </div>
+                </div>
+                <button class="btn-primary" id="btn-save-general">Lưu thay đổi</button>
+              </div>
+
+              <!-- Privacy -->
+              <div class="s-panel" id="s-privacy">
+                <h3>Quyền riêng tư</h3>
+                <div class="form-group">
+                  <label>Ai xem được Story của bạn?</label>
+                  <select id="set-story-privacy" class="plain-input">
+                    <option value="public">Mọi người</option>
+                    <option value="friends">Chỉ bạn bè</option>
+                    <option value="only_me">Chỉ mình tôi</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Ai xem được Ghi chú của bạn?</label>
+                  <select id="set-note-privacy" class="plain-input">
+                    <option value="public">Mọi người</option>
+                    <option value="friends">Chỉ bạn bè</option>
+                    <option value="only_me">Chỉ mình tôi</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Ai xem được bài viết của bạn?</label>
+                  <select id="set-post-privacy" class="plain-input">
+                    <option value="public">Mọi người</option>
+                    <option value="friends">Chỉ bạn bè</option>
+                  </select>
+                </div>
+                <button class="btn-primary" id="btn-save-privacy">Lưu</button>
+              </div>
+
+              <!-- Verify -->
+              <div class="s-panel" id="s-verify">
+                <h3>Yêu cầu xác minh</h3>
+                <p style="color:var(--text-muted);margin-bottom:16px;font-size:0.9rem;">
+                  Tick được Admin duyệt.<br>
+                  <span class="tick black">●</span> <strong>Tick đen</strong> — Quyền lực cao nhất<br>
+                  <span class="tick blue">●</span> <strong>Tick xanh</strong> — Quyền lực thứ 2<br>
+                  <span class="tick white">●</span> <strong>Tick trắng</strong> — Cơ bản
+                </p>
+                <div id="current-verify-status" class="card" style="margin-bottom:16px;"></div>
+                <div class="form-group">
+                  <label>Chọn loại tick muốn yêu cầu</label>
+                  <select id="verify-type" class="plain-input">
+                    <option value="white">Tick trắng</option>
+                    <option value="blue">Tick xanh</option>
+                    <option value="black">Tick đen</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Lý do yêu cầu</label>
+                  <textarea id="verify-reason" class="plain-input" rows="3" placeholder="Giải thích vì sao bạn xứng đáng..."></textarea>
+                </div>
+                <button class="btn-primary" id="btn-request-verify">Gửi yêu cầu</button>
+                <div id="verify-history" style="margin-top:20px;"></div>
+              </div>
+
+              <!-- Page -->
+              <div class="s-panel" id="s-page">
+                <h3>Tạo Trang (Page)</h3>
+                <p style="color:var(--text-muted);margin-bottom:16px;font-size:0.9rem;">Tạo trang Kinh doanh hoặc Cá nhân như Facebook</p>
+                <div class="form-group">
+                  <label>Tên trang</label>
+                  <input type="text" id="page-name" class="plain-input" placeholder="Tên trang của bạn" />
+                </div>
+                <div class="form-group">
+                  <label>Loại trang</label>
+                  <select id="page-type" class="plain-input">
+                    <option value="personal">Cá nhân</option>
+                    <option value="business">Kinh doanh</option>
+                    <option value="community">Cộng đồng</option>
+                    <option value="brand">Thương hiệu</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Mô tả</label>
+                  <textarea id="page-desc" class="plain-input" rows="3"></textarea>
+                </div>
+                <button class="btn-primary" id="btn-create-page">Tạo trang</button>
+                <div id="my-pages" style="margin-top:24px;"></div>
+              </div>
+
+              <!-- Language -->
+              <div class="s-panel" id="s-language">
+                <h3>Ngôn ngữ</h3>
+                <div class="form-group">
+                  <label>Ngôn ngữ hiển thị</label>
+                  <select id="set-language" class="plain-input">
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+                <button class="btn-primary" id="btn-save-lang">Lưu</button>
+              </div>
+
+              <!-- Terms -->
+              <div class="s-panel" id="s-terms">
+                <h3>Điều khoản sử dụng</h3>
+                <div class="terms-content" style="gap:12px;">
+                  <div class="term-block"><h4>1. Chấp nhận điều khoản</h4><p>Bằng việc sử dụng SREC, bạn đồng ý tuân thủ các điều khoản.</p></div>
+                  <div class="term-block"><h4>2. Tài khoản</h4><p>Bạn chịu trách nhiệm bảo mật thông tin đăng nhập.</p></div>
+                  <div class="term-block"><h4>3. Nội dung</h4><p>Không đăng nội dung vi phạm pháp luật hoặc xâm phạm người khác.</p></div>
+                  <div class="term-block"><h4>4. Quyền riêng tư</h4><p>Chúng tôi bảo vệ dữ liệu cá nhân, không bán cho bên thứ ba.</p></div>
+                  <div class="term-block"><h4>5. Hành vi bị cấm</h4><p>Spam, lừa đảo, quấy rối sẽ bị khóa tài khoản.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ADMIN -->
+        <div id="view-admin" class="view" style="display:none;">
+          <div class="admin-header">
+            <h2><i class="fas fa-shield-halved"></i> Trang Quản trị SREC</h2>
+            <p>Quản lý người dùng, duyệt tick xác minh và theo dõi hệ thống</p>
+          </div>
+
+          <div class="admin-stats" id="admin-stats">
+            <div class="stat-card"><div class="stat-num" id="stat-users">—</div><div class="stat-label">Người dùng</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-posts-all">—</div><div class="stat-label">Bài viết</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-pending-verify">—</div><div class="stat-label">Chờ duyệt tick</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-pages">—</div><div class="stat-label">Trang (Page)</div></div>
+          </div>
+
+          <div class="admin-tabs">
+            <button class="atab active" data-atab="verify"><i class="fas fa-certificate"></i> Duyệt tick</button>
+            <button class="atab" data-atab="users"><i class="fas fa-users"></i> Người dùng</button>
+            <button class="atab" data-atab="posts"><i class="fas fa-newspaper"></i> Bài viết</button>
+            <button class="atab" data-atab="reports"><i class="fas fa-flag"></i> Báo cáo</button>
+          </div>
+
+          <!-- Verify requests -->
+          <div class="atab-panel active" id="atab-verify">
+            <div class="card">
+              <h3>Yêu cầu xác minh đang chờ</h3>
+              <div id="admin-verify-list"></div>
+            </div>
+            <div class="card" style="margin-top:16px;">
+              <h3>Đã xử lý gần đây</h3>
+              <div id="admin-verify-history"></div>
+            </div>
+          </div>
+
+          <!-- Users -->
+          <div class="atab-panel" id="atab-users" style="display:none;">
+            <div class="card">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+                <h3>Danh sách người dùng</h3>
+                <input type="text" id="admin-user-search" class="plain-input" placeholder="Tìm tên / @username..." style="max-width:240px;" />
+              </div>
+              <div id="admin-users-list" class="admin-table-wrap"></div>
+            </div>
+          </div>
+
+          <!-- Posts moderation -->
+          <div class="atab-panel" id="atab-posts" style="display:none;">
+            <div class="card">
+              <h3>Bài viết gần đây</h3>
+              <div id="admin-posts-list"></div>
+            </div>
+          </div>
+
+          <!-- Reports placeholder -->
+          <div class="atab-panel" id="atab-reports" style="display:none;">
+            <div class="card">
+              <h3>Báo cáo vi phạm</h3>
+              <div id="admin-reports-list">
+                <p style="color:var(--text-muted);padding:16px 0;">Chưa có báo cáo nào.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <aside class="sidebar right-sidebar">
+        <div class="card">
+          <h4>Gợi ý kết bạn</h4>
+          <div id="suggestions"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Create Post Modal -->
+  <div class="modal-overlay" id="create-post-modal">
+    <div class="modal post-modal">
+      <div class="modal-header">
+        <h3>Tạo bài viết</h3>
+        <button class="modal-close" id="close-post-modal"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="post-user"><img id="modal-avatar" src="" alt="" /><strong id="modal-name">User</strong></div>
+        <textarea id="post-content" placeholder="Bạn đang nghĩ gì?"></textarea>
+        <div id="post-image-preview" class="post-image-preview" style="display:none;">
+          <img id="preview-img" src="" alt="" />
+          <button id="remove-preview"><i class="fas fa-times"></i></button>
+        </div>
+        <input type="file" id="post-image-input" accept="image/*" style="display:none;" />
+      </div>
+      <div class="modal-footer">
+        <button class="btn-outline" id="btn-attach-image"><i class="fas fa-image"></i> Thêm ảnh</button>
+        <button class="btn-primary" id="btn-submit-post">Đăng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Story Modal -->
+  <div class="modal-overlay" id="story-modal">
+    <div class="modal">
+      <div class="modal-header"><h3>Tạo Story</h3><button class="modal-close" id="close-story-modal"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <div class="form-group"><label>Nội dung / Caption</label><textarea id="story-text" class="plain-input" rows="2" placeholder="Viết gì đó..."></textarea></div>
+        <div class="form-group"><label>Ảnh Story</label><input type="file" id="story-image-input" accept="image/*" class="plain-input" /></div>
+        <div id="story-preview" style="display:none;margin-top:8px;"><img id="story-preview-img" style="width:100%;border-radius:12px;max-height:240px;object-fit:cover;" /></div>
+      </div>
+      <div class="modal-footer"><button class="btn-primary" id="btn-submit-story">Đăng Story</button></div>
+    </div>
+  </div>
+
+  <!-- Create Note Modal -->
+  <div class="modal-overlay" id="note-modal">
+    <div class="modal">
+      <div class="modal-header"><h3>Ghi chú</h3><button class="modal-close" id="close-note-modal"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <textarea id="note-content" class="plain-input" rows="4" placeholder="Viết ghi chú của bạn..."></textarea>
+      </div>
+      <div class="modal-footer"><button class="btn-primary" id="btn-submit-note">Đăng ghi chú</button></div>
+    </div>
+  </div>
+
+  <!-- Edit Profile Modal -->
+  <div class="modal-overlay" id="edit-profile-modal">
+    <div class="modal">
+      <div class="modal-header"><h3>Chỉnh sửa trang cá nhân</h3><button class="modal-close" id="close-edit-modal"><i class="fas fa-times"></i></button></div>
+      <div class="modal-body">
+        <div class="form-group"><label>Tên hiển thị</label><input type="text" id="edit-name" class="plain-input" /></div>
+        <div class="form-group"><label>Giới thiệu</label><textarea id="edit-bio" class="plain-input" rows="3"></textarea></div>
+        <div class="form-group"><label>Nơi ở</label><input type="text" id="edit-location" class="plain-input" placeholder="Hà Nội, Việt Nam" /></div>
+        <div class="form-group"><label>Tình trạng hôn nhân</label>
+          <select id="edit-relation" class="plain-input">
+            <option value="">— Chọn —</option>
+            <option value="single">Độc thân</option>
+            <option value="dating">Hẹn hò</option>
+            <option value="engaged">Đã đính hôn</option>
+            <option value="married">Đã kết hôn</option>
+            <option value="complicated">Phức tạp</option>
+            <option value="private">Không hiển thị</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer"><button class="btn-primary" id="btn-save-profile">Lưu</button></div>
+    </div>
+  </div>
+
+  <!-- View Story Modal -->
+  <div class="modal-overlay" id="view-story-modal">
+    <div class="story-viewer">
+      <button class="modal-close" id="close-view-story" style="position:absolute;top:16px;right:16px;z-index:10;"><i class="fas fa-times"></i></button>
+      <img id="view-story-img" src="" alt="" />
+      <div class="story-viewer-info">
+        <strong id="view-story-author"></strong>
+        <p id="view-story-text"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Call Modal -->
+  <div class="modal-overlay" id="video-call-modal">
+    <div class="modal" style="max-width:640px;">
+      <div class="modal-header">
+        <h3 id="vc-title">Video Call</h3>
+        <button class="modal-close" id="close-vc"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" style="text-align:center;">
+        <div id="vc-status" style="color:var(--text-muted);margin-bottom:12px;">Đang kết nối...</div>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <video id="vc-local" autoplay muted playsinline style="width:200px;height:150px;background:#000;border-radius:12px;object-fit:cover;"></video>
+          <video id="vc-remote" autoplay playsinline style="width:320px;height:240px;background:#111;border-radius:12px;object-fit:cover;"></video>
+        </div>
+        <p style="margin-top:12px;font-size:0.85rem;color:var(--text-muted);">Gọi trong cùng mạng / cần cho phép camera & micro</p>
+      </div>
+      <div class="modal-footer" style="justify-content:center;">
+        <button class="btn-primary" id="btn-vc-end" style="background:#ef4444;">Kết thúc</button>
+      </div>
+    </div>
+  </div>
+
+  <input type="file" id="chat-bg-input" accept="image/*" style="display:none;" />
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast"></div>
+
+  <input type="file" id="avatar-input" accept="image/*" style="display:none;" />
+  <input type="file" id="cover-input" accept="image/*" style="display:none;" />
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
