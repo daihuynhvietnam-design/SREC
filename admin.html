@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SREC Admin</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { background: #0a0a0e; }
+    .admin-page { min-height: 100vh; }
+    .admin-topbar {
+      height: 60px; background: var(--bg-card); border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; padding: 0 24px;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .admin-topbar .logo { gap: 10px; }
+    .admin-topbar-right { display: flex; align-items: center; gap: 16px; }
+    .admin-topbar-right .admin-user { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+    .admin-topbar-right img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; background: var(--gradient); }
+    .admin-layout { display: flex; min-height: calc(100vh - 60px); }
+    .admin-sidebar {
+      width: 240px; background: var(--bg-card); border-right: 1px solid var(--border);
+      padding: 16px 12px; flex-shrink: 0; position: sticky; top: 60px; height: calc(100vh - 60px); overflow-y: auto;
+    }
+    .admin-sidebar .as-item {
+      display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 10px;
+      color: var(--text-muted); font-weight: 500; font-size: 0.95rem; cursor: pointer;
+      border: none; background: none; width: 100%; text-align: left; transition: all 0.2s; margin-bottom: 4px;
+    }
+    .admin-sidebar .as-item i { width: 22px; font-size: 1.1rem; }
+    .admin-sidebar .as-item:hover { background: var(--bg-hover); color: var(--text); }
+    .admin-sidebar .as-item.active { background: rgba(99,102,241,0.15); color: var(--primary-light); }
+    .admin-main { flex: 1; padding: 28px 32px; max-width: 1100px; }
+    .admin-login-wrap {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px;
+    }
+    .admin-login-box {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px;
+      padding: 40px 36px; width: 100%; max-width: 420px; box-shadow: var(--shadow);
+    }
+    .admin-login-box h1 { font-size: 1.5rem; margin: 16px 0 6px; text-align: center; }
+    .admin-login-box .sub { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 28px; }
+    .denied-box { text-align: center; padding: 60px 24px; }
+    .denied-box i { font-size: 3rem; color: var(--danger); margin-bottom: 16px; }
+    #admin-app { display: none; }
+    #admin-gate { display: none; }
+  </style>
+</head>
+<body>
+  <!-- Loader -->
+  <div id="app-loader">
+    <div class="loader-logo">S</div>
+    <p>Đang tải Admin...</p>
+  </div>
+
+  <!-- Login gate -->
+  <div id="admin-gate">
+    <div class="admin-login-wrap">
+      <div class="admin-login-box" id="login-box">
+        <div class="logo" style="justify-content:center;">
+          <div class="logo-icon">S</div>
+          <span class="logo-text">SREC</span>
+        </div>
+        <h1>Đăng nhập Admin</h1>
+        <p class="sub">Chỉ tài khoản Quản trị viên mới được truy cập</p>
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label>Email / SĐT / Username</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" id="admin-login-id" placeholder="email, sđt hoặc @username" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mật khẩu</label>
+            <div class="input-wrap">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="admin-login-pass" placeholder="••••••••" required />
+            </div>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Đăng nhập</button>
+        </form>
+        <p style="text-align:center;margin-top:16px;font-size:0.85rem;color:var(--text-muted);">
+          <a href="index.html">← Về trang chính</a>
+        </p>
+      </div>
+      <div class="admin-login-box denied-box" id="denied-box" style="display:none;">
+        <i class="fas fa-ban"></i>
+        <h2>Không có quyền truy cập</h2>
+        <p style="color:var(--text-muted);margin:12px 0 24px;">Tài khoản của bạn không phải Quản trị viên.</p>
+        <button class="btn-outline" id="btn-back-home">Về trang chính</button>
+        <button class="btn-ghost" id="btn-admin-logout" style="margin-left:8px;">Đăng xuất</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin App -->
+  <div id="admin-app" class="admin-page">
+    <header class="admin-topbar">
+      <div class="logo">
+        <div class="logo-icon">S</div>
+        <span class="logo-text">SREC Admin</span>
+      </div>
+      <div class="admin-topbar-right">
+        <a href="index.html" class="btn-ghost" style="font-size:0.9rem;"><i class="fas fa-external-link-alt"></i> Trang chính</a>
+        <div class="admin-user">
+          <img id="adm-avatar" src="" alt="" />
+          <span id="adm-name">Admin</span>
+        </div>
+        <button class="btn-outline" id="btn-logout-admin" style="padding:8px 14px;font-size:0.85rem;">Đăng xuất</button>
+      </div>
+    </header>
+
+    <div class="admin-layout">
+      <aside class="admin-sidebar">
+        <button class="as-item active" data-panel="dashboard"><i class="fas fa-chart-line"></i> Tổng quan</button>
+        <button class="as-item" data-panel="verify"><i class="fas fa-certificate"></i> Duyệt tick</button>
+        <button class="as-item" data-panel="users"><i class="fas fa-users"></i> Người dùng</button>
+        <button class="as-item" data-panel="posts"><i class="fas fa-newspaper"></i> Bài viết</button>
+        <button class="as-item" data-panel="pages"><i class="fas fa-flag"></i> Trang (Page)</button>
+        <button class="as-item" data-panel="reports"><i class="fas fa-flag"></i> Báo cáo</button>
+      </aside>
+
+      <main class="admin-main">
+        <!-- Dashboard -->
+        <div class="adm-panel active" id="panel-dashboard">
+          <div class="admin-header">
+            <h2><i class="fas fa-chart-line"></i> Tổng quan hệ thống</h2>
+            <p>Thống kê nhanh toàn bộ SREC</p>
+          </div>
+          <div class="admin-stats">
+            <div class="stat-card"><div class="stat-num" id="stat-users">—</div><div class="stat-label">Người dùng</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-posts-all">—</div><div class="stat-label">Bài viết</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-pending-verify">—</div><div class="stat-label">Chờ duyệt tick</div></div>
+            <div class="stat-card"><div class="stat-num" id="stat-pages">—</div><div class="stat-label">Trang (Page)</div></div>
+          </div>
+          <div class="card" style="margin-top:8px;">
+            <h3 style="margin-bottom:12px;">Hoạt động gần đây</h3>
+            <div id="recent-activity"><p style="color:var(--text-muted);">Đang tải...</p></div>
+          </div>
+        </div>
+
+        <!-- Verify -->
+        <div class="adm-panel" id="panel-verify" style="display:none;">
+          <div class="admin-header">
+            <h2><i class="fas fa-certificate"></i> Duyệt tick xác minh</h2>
+            <p>Tick đen > xanh > trắng — chỉ Admin được duyệt</p>
+          </div>
+          <div class="card">
+            <h3>Đang chờ duyệt</h3>
+            <div id="admin-verify-list"></div>
+          </div>
+          <div class="card" style="margin-top:16px;">
+            <h3>Đã xử lý gần đây</h3>
+            <div id="admin-verify-history"></div>
+          </div>
+        </div>
+
+        <!-- Users -->
+        <div class="adm-panel" id="panel-users" style="display:none;">
+          <div class="admin-header">
+            <h2><i class="fas fa-users"></i> Quản lý người dùng</h2>
+            <p>Tìm kiếm, đặt tick, cấp Admin, khóa tài khoản</p>
+          </div>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px;flex-wrap:wrap;">
+              <h3 style="margin:0;">Danh sách</h3>
+              <input type="text" id="admin-user-search" class="plain-input" placeholder="Tìm tên / @username..." style="max-width:260px;" />
+            </div>
+            <div id="admin-users-list" class="admin-table-wrap"></div>
+          </div>
+        </div>
+
+        <!-- Posts -->
+        <div class="adm-panel" id="panel-posts" style="display:none;">
+          <div class="admin-header">
+            <h2><i class="fas fa-newspaper"></i> Kiểm duyệt bài viết</h2>
+            <p>Xem và xóa bài viết vi phạm</p>
+          </div>
+          <div class="card">
+            <div id="admin-posts-list"></div>
+          </div>
+        </div>
+
+        <!-- Pages -->
+        <div class="adm-panel" id="panel-pages" style="display:none;">
+          <div class="admin-header">
+            <h2><i class="fas fa-flag"></i> Quản lý Page</h2>
+            <p>Các trang do người dùng tạo</p>
+          </div>
+          <div class="card">
+            <div id="admin-pages-list"></div>
+          </div>
+        </div>
+
+        <!-- Reports -->
+        <div class="adm-panel" id="panel-reports" style="display:none;">
+          <div class="admin-header">
+            <h2><i class="fas fa-flag"></i> Báo cáo vi phạm</h2>
+            <p>Nội dung bị người dùng báo cáo</p>
+          </div>
+          <div class="card">
+            <div id="admin-reports-list">
+              <p style="color:var(--text-muted);padding:16px 0;">Chưa có báo cáo nào.</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
